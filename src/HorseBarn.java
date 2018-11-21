@@ -1,9 +1,8 @@
 public class HorseBarn {
     private Horse[] spaces;
 
-    public HorseBarn(Horse[] spaces)
-    {
-        this.spaces=spaces;
+    public HorseBarn(Horse[] spaces) {
+        this.spaces = spaces;
     }
 
     public int findHorseSpace(String name) {
@@ -11,17 +10,19 @@ public class HorseBarn {
             if (this.spaces[x] != null && this.spaces[x].getName().equals(name)) {
                 return x;
             }
-            return -1;
-        }
+            }
+
+        return -1;
 
 
     }
 
+
     public void consolidate() {
         for (int x = 0; x <= spaces.length - 1; x++) {
-            if (this.spaces[] ==null)
+            if (this.spaces[x] ==null)
             {
-                for (int i = x + j; i < this.spaces.length; i++) {
+                for (int i = x + 1; i < this.spaces.length; i++) {
                     if (this.spaces[i] != null) {
                         this.spaces[x] = this.spaces[i];
                         this.spaces[i] = null;
