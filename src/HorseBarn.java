@@ -1,25 +1,50 @@
-public class HorseBarn
-{
+public class HorseBarn {
     private Horse[] spaces;
 
-    public int findHorseSpace(String name)
+    public HorseBarn(Horse[] spaces)
     {
-        for(int x=0; x<=spaces.length; x++)
-        {
-            if(this.spaces[x] != null && (name))
-            {
-                i=x;
+        this.spaces=spaces;
+    }
+
+    public int findHorseSpace(String name) {
+        for (int x = 0; x <= spaces.length - 1; x++) {
+            if (this.spaces[x] != null && this.spaces[x].getName().equals(name)) {
+                return x;
             }
-        return i;
+            return -1;
         }
 
 
     }
-    public void consolidate()
-    {
-        for(int x=0; x<=spaces.length; x++)
-        {
-            if(spaces >=x+1())
+
+    public void consolidate() {
+        for (int x = 0; x <= spaces.length - 1; x++) {
+            if (this.spaces[] ==null)
+            {
+                for (int i = x + j; i < this.spaces.length; i++) {
+                    if (this.spaces[i] != null) {
+                        this.spaces[x] = this.spaces[i];
+                        this.spaces[i] = null;
+                        i = this.spaces.length;
+                    }
+                }
+            }
         }
+    }
+
+    public String toString() {
+        String horseInfo = "";
+        for (int x = 0; x < this.spaces.length; x++) {
+            if (this.spaces[x] != null) {
+                horseInfo = horseInfo + "[" + this.spaces[x].getName() + "]";
+
+            }
+            else {
+                horseInfo = horseInfo + "[null]";
+            }
+
+
+        }
+        return horseInfo;
     }
 }
